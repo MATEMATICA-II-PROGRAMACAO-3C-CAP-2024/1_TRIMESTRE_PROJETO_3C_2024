@@ -31,8 +31,13 @@ function calculadoraTempo(tempoObjetivo){
     minutos%=60;
     horas%=24;
 
-    return dias + " dias "+ horas +" horas " + minutos + " minutos " + segundos + " segundos ";
+    if(tempoFinal>0){
+        return dias + " dias "+ horas +" horas " + minutos + " minutos " + segundos + " segundos ";
 
+    }
+    else{
+        return "PRAZO FINALIZADO!";
+    }
 }
 
 function atualizaCronometro(){
@@ -41,5 +46,9 @@ function atualizaCronometro(){
 
 }
 }
+
+function comecaCronometro(){
 atualizaCronometro();
 setInterval(atualizaCronometro, 1000);
+}
+comecaCronometro();
